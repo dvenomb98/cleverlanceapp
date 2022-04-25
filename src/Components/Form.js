@@ -62,10 +62,10 @@ const validate = (values) => {
   if (!values.lastName) {
     errors.lastName = "Příjmení je vyžadováno!"
   }
-  else if (values.lastName.length <= 2) {
+  else if (values.lastName.length < 2) {
     errors.lastName = "Nedosažen minimální počet znaků!"
   }
-  else if (values.lastName.length >= 20) {
+  else if (values.lastName.length > 20) {
     errors.lastName = "Překročen maximální počet znaků!"
   }
   else if(!alphaRegex.test(values.lastName)) {
